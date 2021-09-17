@@ -1,1 +1,1 @@
-web: gunicorn kag_management.wsgi
+web: gunicorn kaj_management.wsgi

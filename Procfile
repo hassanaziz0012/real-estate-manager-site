@@ -1,0 +1,1 @@
+web: gunicorn kag_management.wsgi

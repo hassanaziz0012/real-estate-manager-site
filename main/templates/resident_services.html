@@ -2,27 +2,34 @@
 {% load static %}
 
 {% block content %}
-<section class="bg-success py-5">
-    <div class="container">
-        <div class="row align-items-center py-5">
-            <div class="col-md-8 text-white">
-                <h1>Resident Services</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-            </div>
-            <div class="col-md-4">
-                <img class="img-fluid" src="{% static 'assets/img/house.png' %}" alt="About Hero">
+<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active home-hero-container">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <!-- <img class="img-fluid" src="{% static './assets/img/transpa rent.png' %}"" alt=""> -->
+                        </div>
+                        <div class=" col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left align-self-center text-white">
+                            <!-- <h1 class="h1 text-success"><b>KAJ</b> Properties</h1>
+                            <h3 class="h2">Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto beatae dolorem
+                                doloremque repellat, aut eveniet aspernatur possimus dignissimos?
+                                Libero nulla corporis perferendis nam quia.
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 <!-- Close Banner -->
 
 <!-- Start Section -->
-<section class="container py-5">
+<!-- <section class="container py-5">
     <div class="row text-center pt-5 pb-3">
         <div class="col-lg-6 m-auto">
             <h1 class="h1">Our Services</h1>
@@ -54,110 +61,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Section -->
 
-<!-- Start Maintainence Requests -->
-<section class="bg-light py-5 maintainence-service-detail d-none">
-    <div class="container my-4">
-        <div class="row text-center py-3">
-            <div class="col-lg-6 m-auto">
-                <h1 class="h1">Maintainence Requests</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    Lorem ipsum dolor sit amet.
-                </p>
-            </div>
-            <div class="col-lg-9 m-auto tempaltemo-carousel">
-                <div class="row d-flex flex-row">
-                    <div class="col">
-                        <h1>*Google Form to be embedded here.</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--End Maintainence Requests-->
-
-<!-- Start FAQs -->
-<section class="bg-light py-5 faq-service-detail d-none">
-    <div class="container my-4">
-        <div class="row text-center py-3">
-            <div class="col-lg-6 m-auto">
-                <h1 class="h1">Frequently Asked Questions</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    Lorem ipsum dolor sit amet.
-                </p>
-            </div>
-            <div class="col-lg-9 m-auto tempaltemo-carousel">
-                <div class="row d-flex flex-row">
-                    <div class="col">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        How to do something?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aut ipsa
-                                        ab adipisci quis. Non dolore ab impedit, sequi voluptatem recusandae harum
-                                        exercitationem ut saepe accusamus, itaque nam sunt repellat!
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        How to do something?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aut ipsa
-                                        ab adipisci quis. Non dolore ab impedit, sequi voluptatem recusandae harum
-                                        exercitationem ut saepe accusamus, itaque nam sunt repellat!
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        How to do something?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aut ipsa
-                                        ab adipisci quis. Non dolore ab impedit, sequi voluptatem recusandae harum
-                                        exercitationem ut saepe accusamus, itaque nam sunt repellat!
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--End FAQs-->
-
 <!-- Start Testimonials -->
-<section class="bg-light py-5 testimonials-service-detail d-none">
+<section class="py-5 testimonials-service-detail">
     <div class="container my-4">
         <div class="row text-center py-3">
             <div class="col-lg-6 m-auto">
@@ -167,7 +75,7 @@
                     Lorem ipsum dolor sit amet.
                 </p>
             </div>
-            <div class="col-lg-9 m-auto tempaltemo-carousel">
+            <div class="col-lg-12 m-auto tempaltemo-carousel">
                 <div class="row d-flex flex-row">
                     <!--Controls-->
                     <div class="col-1 align-self-center">
@@ -187,21 +95,37 @@
                                 <!--First slide-->
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_01.png' %}" alt="Brand Logo"></a>
+                                        <div class="col-6 p-md-5">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3>- Marsha G.</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        "Thank you KAJ Maintenance Team! I appreciate the prompt
+                                                        response to my
+                                                        service requests, and the care you took in the attention to
+                                                        detail to
+                                                        complete the job."
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_02.png' %}" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_03.png' %}" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_04.png' %}" alt="Brand Logo"></a>
+
+                                        <div class="col-6 p-md-5">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3>- Candice Y.</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        "From the moment I fell in love with the apartment to the moment
+                                                        I signed the lease, I was taken care of in a prompt and kind
+                                                        way. And not to mention the application process was quick and
+                                                        easy!"
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -210,21 +134,33 @@
                                 <!--Second slide-->
                                 <div class="carousel-item">
                                     <div class="row">
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_01.png' %}" alt="Brand Logo"></a>
+                                        <div class="col-6 p-md-5">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3>- Derek M.</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        "I value the fact that I never have to ask the KAJ Properties
+                                                        Team to wear a mask. They are always mindful of their tenants."
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_02.png' %}" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_03.png' %}" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_04.png' %}" alt="Brand Logo"></a>
+
+                                        <div class="col-6 p-md-5">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3>- Mathew H.</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        "The KAJ Property Team always promotes a kind, quiet, respectful
+                                                        community environment. The KAJ Property Team is always hands-on
+                                                        ensuring the community is clean, and well maintained."
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -233,21 +169,19 @@
                                 <!--Third slide-->
                                 <div class="carousel-item">
                                     <div class="row">
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_01.png' %}" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_02.png' %}" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_03.png' %}" alt="Brand Logo"></a>
-                                        </div>
-                                        <div class="col-3 p-md-5">
-                                            <a href="#"><img class="img-fluid brand-img"
-                                                    src="{% static 'assets/img/brand_04.png' %}" alt="Brand Logo"></a>
+                                        <div class="col-6 p-md-5">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3>- Kevin Q.</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        "The KAJ Properties Team Members have been helpful from the
+                                                        first interaction. I would say they are professional,
+                                                        communicative , and always willing to help."
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -272,6 +206,30 @@
     </div>
 </section>
 <!--End Testimonials-->
+
+<!-- Start Maintainence Requests -->
+<section class="bg-light py-5 maintainence-service-detail">
+    <div class="container my-4">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1 mb-5">Resident Services</h1>
+                <h4 class="h4">Maintainence Requests</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+            <div class="col-lg-9 m-auto tempaltemo-carousel">
+                <div class="row d-flex flex-row">
+                    <div class="col">
+                        <h1>*Google Form to be embedded here.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Maintainence Requests-->
 
 <script>
     const maintainence_service_detail = document.querySelector('.maintainence-service-detail');

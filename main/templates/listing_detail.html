@@ -63,13 +63,19 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="h2">{{ listing.address }}</h1>
-                        <p class="h3 py-2">${{ listing.price }}</p>
+                        <div class="row">
+                            <div class="col-md-2 h3 py-2">${{ listing.price }}</div>
+                            <div class="col-md-2 h3 py-2"> <i class="fas fa-bed fa-lg"></i> {{ listing.beds_count }}</div>
+                            <div class="col-md-2 h3 py-2"><i class="fas fa-bath fa-lg"></i> {{ listing.baths_count }}</div>
+                        </div>
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <h6>City: {{ listing.city }}</h6>
                                 <h6>ZIP Code: {{ listing.zip_code }}</h6>
+                                <h6>Application Fee: ${{ listing.application_fee }}</h6>
                             </li>
                         </ul>
+
 
                         <h6>Description:</h6>
                         <p>
@@ -77,13 +83,15 @@
                         </p>
 
                         <div class="row pb-3">
-                            <div class="col d-grid">
-                                <button type="submit" class="btn btn-success btn-lg" name="submit"
-                                    value="buy">Buy</button>
+                            <div class="col-md-6 d-grid">
+                                <button type="submit" class="btn btn-success btn-lg" name="submit" value="apply">Apply</button>
                             </div>
-                            <div class="col d-grid">
-                                <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add
-                                    To Cart</button>
+                            <div class="col-md-6 d-grid">
+                                <button type="submit" class="btn btn-success btn-lg" name="submit" value="schedule">Schedule A Showing</button>
+                            </div>
+
+                            <div class="col d-grid mt-5">
+                                <button type="submit" class="btn btn-outline-success btn-lg" name="submit" value="contact">Contact Us</button>
                             </div>
                         </div>
 

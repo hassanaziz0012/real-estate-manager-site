@@ -3,19 +3,35 @@
 
 {% block content %}
 <!-- Start Content Page -->
-<div class="container-fluid bg-light py-5">
-    <div class="col-md-6 m-auto text-center">
-        <h1 class="h1">Contact Us</h1>
-        <p>
-            Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet.
-        </p>
+<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active home-hero-container">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <!-- <img class="img-fluid" src="{% static './assets/img/transpa rent.png' %}"" alt=""> -->
+                        </div>
+                        <div class=" col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left align-self-center text-white">
+                            <!-- <h1 class="h1 text-success"><b>KAJ</b> Properties</h1>
+                            <h3 class="h2">Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto beatae dolorem
+                                doloremque repellat, aut eveniet aspernatur possimus dignissimos?
+                                Libero nulla corporis perferendis nam quia.
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- Start Contact -->
 <div class="container py-5">
     <div class="row py-5">
+        <h1 class="h1 col-lg-12 text-center mb-5">We care, how can we help?</h1>
         <div class="col-md-6 d-flex flex-column justify-content-start">
             <h3>Contact Information</h3>
             <hr>
@@ -74,5 +90,81 @@
     </div>
 </div>
 <!-- End Contact -->
+
+<!-- Start FAQs -->
+<section class="bg-light py-5 faq-service-detail">
+    <div class="container my-4">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Frequently Asked Questions</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+            <div class="col-lg-9 m-auto tempaltemo-carousel">
+                <div class="row d-flex flex-row">
+                    <div class="col">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        How to do something?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aut ipsa
+                                        ab adipisci quis. Non dolore ab impedit, sequi voluptatem recusandae harum
+                                        exercitationem ut saepe accusamus, itaque nam sunt repellat!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        How to do something?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aut ipsa
+                                        ab adipisci quis. Non dolore ab impedit, sequi voluptatem recusandae harum
+                                        exercitationem ut saepe accusamus, itaque nam sunt repellat!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        How to do something?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aut ipsa
+                                        ab adipisci quis. Non dolore ab impedit, sequi voluptatem recusandae harum
+                                        exercitationem ut saepe accusamus, itaque nam sunt repellat!
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End FAQs-->
 
 {% endblock content %}

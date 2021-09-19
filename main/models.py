@@ -10,6 +10,7 @@ class Listing(models.Model):
     images = models.ManyToManyField('ListingImage', related_name='images', blank=True)
 
     price = models.IntegerField(null=False, blank=False)
+    application_fee = models.IntegerField(null=False, blank=False, default=1)
     description = models.TextField(null=True, blank=True)
 
     def get_banner(self):

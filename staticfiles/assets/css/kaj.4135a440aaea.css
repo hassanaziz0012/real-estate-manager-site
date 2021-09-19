@@ -1,0 +1,12 @@
+.service:hover {
+    cursor: pointer !important;
+}
+
+.search-listings-form-fields input {
+    margin-bottom: 5px;
+}
+
+.home-hero-container {
+    background-image: url("../img/3d_banner.2bf1138bd4a2.jpg");
+    background-position: center;
+}

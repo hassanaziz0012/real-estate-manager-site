@@ -67,3 +67,6 @@ def listing_detail(request, id):
         image_groups.append(listing_images.page(i).object_list)
 
     return render(request, 'listing_detail.html', context={'listing': listing, 'image_groups': image_groups})
+
+def admin(request):
+    return render(request, 'admin.html', context={'listings': Listing.objects.all().order_by('-id')})

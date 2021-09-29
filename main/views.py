@@ -1,7 +1,7 @@
 from django.http.response import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.core.paginator import Paginator
-from .models import Listing
+from .models import Listing, ListingImage
 from pprint import pprint
 
 # Create your views here.
@@ -68,5 +68,63 @@ def listing_detail(request, id):
 
     return render(request, 'listing_detail.html', context={'listing': listing, 'image_groups': image_groups})
 
+def listing_create(request):
+    params = {
+        'address': request.POST.get('address', None),
+        'zip_code': request.POST.get('zip_code', None),
+        'city': request.POST.get('city', None),
+        'price': request.POST.get('price', None),
+        'application_fee': request.POST.get('application_fee', None),
+        'beds_count': request.POST.get('beds', None),
+        'baths_count': request.POST.get('baths', None),
+        'description': request.POST.get('description', None)
+    }
+
+    listing = Listing.objects.create(**params)
+    listing.save()
+
+    imgs = request.FILES.getlist('img', None)
+    for img in imgs:
+        image_obj = ListingImage.objects.create(listing=listing, file=img)
+        image_obj.save()
+        listing.images.add(image_obj)
+
+    listing.save()
+
+    return redirect('kaj-admin')
+
+def listing_edit(request, id):
+    if request.method == 'POST':
+        params = {
+            'address': request.POST.get('address', None),
+            'zip_code': request.POST.get('zip_code', None),
+            'city': request.POST.get('city', None),
+            'price': request.POST.get('price', None),
+            'application_fee': request.POST.get('application_fee', None),
+            'beds_count': request.POST.get('beds', None),
+            'baths_count': request.POST.get('baths', None),
+            'description': request.POST.get('description', None)
+        }
+        Listing.objects.filter(pk=id).update(**params) # .filter() gives us access to the .update() method, which allows us to update all properties in a single line, instead of doing it one by one.
+        listing = Listing.objects.get(pk=id)
+
+        imgs = request.FILES.getlist('img', None)
+        if imgs:
+            for img in imgs:
+                image_obj = ListingImage.objects.create(listing=listing, file=img)
+                image_obj.save()
+                listing.images.add(image_obj)
+                
+        return redirect('kaj-admin')
+
+    return render(request, 'listing_edit.html', context={'listing': Listing.objects.get(pk=id)})
+
+def listing_delete(request, id):
+    Listing.objects.get(pk=id).delete()
+
+    next = request.POST.get('next', '/')
+    return HttpResponseRedirect(f'{next}')
+
 def admin(request):
     return render(request, 'admin.html', context={'listings': Listing.objects.all().order_by('-id')})
+

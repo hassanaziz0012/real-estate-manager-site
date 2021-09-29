@@ -14,7 +14,10 @@ class Listing(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def get_banner(self):
-        return self.images.first().file.url
+        if len(self.images.all()):
+            return self.images.first().file.url
+        else:
+            return None
 
     def __str__(self) -> str:
         return f'{self.address} - ${self.price}'

@@ -16,23 +16,20 @@
                         <label for="address">Address</label>
                         <input name="address" type="text" class="form-control" required>
                         
-                        <label for="zip_code">ZIP Code</label>
-                        <input name="zip_code" type="text" class="form-control" required>
-                        
                         <label for="city">City</label>
-                        <input name="city" type="text" class="form-control" required>
+                        <input name="city" type="text" class="form-control">
                         
                         <label for="price">Price</label>
-                        <input name="price_min" type="text" class="form-control" placeholder="Min" required>
-                        <input name="price_max" type="text" class="form-control" placeholder="Max" required>
+                        <input name="price_min" type="text" class="form-control" placeholder="Min">
+                        <input name="price_max" type="text" class="form-control" placeholder="Max">
                         
                         <label for="beds">Bed Count</label>
-                        <input name="beds_min" type="text" class="form-control" placeholder="Min" required>
-                        <input name="beds_max" type="text" class="form-control" placeholder="Max" required>
+                        <input name="beds_min" type="text" class="form-control" placeholder="Min">
+                        <input name="beds_max" type="text" class="form-control" placeholder="Max">
 
                         <label for="bath">Bath Count</label>
-                        <input name="bath_min" type="text" class="form-control" placeholder="Min" required>
-                        <input name="bath_max" type="text" class="form-control" placeholder="Max" required>
+                        <input name="bath_min" type="text" class="form-control" placeholder="Min">
+                        <input name="bath_max" type="text" class="form-control" placeholder="Max">
                         
                         <input type="hidden" name="next" value="{{ request.path }}">
                     </fieldset>

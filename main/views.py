@@ -38,6 +38,7 @@ def listings(request):
 
 def search_listings(request):
     if request.method == 'POST':
+        print(request.POST)
         address = request.POST.get('address', None)
         city = request.POST.get('city', None)
         zip_code = request.POST.get('zip_code', None)
@@ -45,10 +46,28 @@ def search_listings(request):
         beds_min, beds_max = request.POST.get('beds_min', None), request.POST.get('beds_max', None)
         price_min, price_max = request.POST.get('price_min', None), request.POST.get('price_max', None)
 
-        listings = Listing.objects.filter(
-            address__icontains=address, city__contains=city, zip_code=zip_code, price__gte=price_min, price__lte=price_max, 
-            baths_count__gte=bath_min, baths_count__lte=bath_max, beds_count__gte=beds_min, beds_count__lte=beds_max
-            )
+        listings = Listing.objects.filter(address__icontains=address, city__contains=city, )
+            
+        if zip_code:
+            listings = listings | Listing.objects.filter(zip_code=zip_code)
+
+        if price_min:
+            listings = listings | Listing.objects.filter(price__gte=price_min)
+        if price_max:
+            listings = listings | Listing.objects.filter(price__lte=price_max)
+
+        if beds_min:
+            listings = listings | Listing.objects.filter(beds_count__gte=beds_min)
+        if beds_max:
+            listings = listings | Listing.objects.filter(beds_count__lte=beds_max)
+            
+        if bath_min:
+            listings = listings | Listing.objects.filter(baths_count__gte=bath_min)
+        if bath_max:
+            listings = listings | Listing.objects.filter(baths_count__lte=bath_max)
+
+
+
         matched_ids = list(listings.values_list('id', flat=True))
         matched_ids_query = ''
         for id in matched_ids:

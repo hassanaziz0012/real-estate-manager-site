@@ -1,0 +1,1 @@
+web: gunicorn kaj_management.wsgi

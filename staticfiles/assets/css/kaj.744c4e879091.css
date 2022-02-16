@@ -1,0 +1,7 @@
+.service:hover {
+    cursor: pointer !important;
+}
+
+.search-listings-form-fields input {
+    margin-bottom: 5px;
+}

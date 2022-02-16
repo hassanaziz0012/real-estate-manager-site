@@ -1,0 +1,5 @@
+db.sqlite3
+main/__pycache__/
+kaj_management/__pycache__/
+main/migrations/__pycache__/
+listing-images/product.png

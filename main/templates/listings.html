@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Start Content -->
+    
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-12 m-auto">
+                <h1 class="h1 mb-3">Search Listings</h1>
+                <form action="{% url 'search-listings' %}" method="post" class="search-listings-form">
+                    {% csrf_token %}
+                    <fieldset class="search-listings-form-fields">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <label for="address">Address or ZIP Code</label>
+                                <input name="address" type="text" class="form-control" required>
+                            </div>
+
+                            <div>
+                                <label for="city">City</label>
+                                <input name="city" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div>
+                                <label for="price">Price</label>
+                                <div class="d-flex">
+                                    <input name="price_min" type="text" class="form-control" placeholder="Min">
+                                    <input name="price_max" type="text" class="form-control" placeholder="Max">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="beds">Bed Count</label>
+                                <div class="d-flex">
+                                    <input name="beds_min" type="text" class="form-control" placeholder="Min">
+                                    <input name="beds_max" type="text" class="form-control" placeholder="Max">
+                                </div>
+                            </div>
+    
+                            <div>
+                                <label for="bath">Bath Count</label>
+                                <div class="d-flex">
+                                    <input name="bath_min" type="text" class="form-control" placeholder="Min">
+                                    <input name="bath_max" type="text" class="form-control" placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="next" value="{{ request.path }}">
+                    </fieldset>
+
+                    <hr>
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-success form-control">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-5">
+            
+            <div class="col-lg-12">
+                
+                <div class="row">
+                    {% for listing in listings %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="{% url 'listing-detail' id=listing.id %}">
+                                        <img class="card-img rounded-0 img-fluid" src="{{ listing.get_banner }}">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <a href="{% url 'listing-detail' id=listing.id %}" class="h3 text-decoration-none text-center">
+                                        <h3>{{ listing.address }}</h3>
+
+                                    </a>
+                                    <hr>
+                                    <p class="text-center mb-0">
+                                        <div class="d-flex align-items-center justify-content-around">
+                                            <div>
+                                                <i class="fas fa-bed fa-lg"></i> {{ listing.beds_count }}
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-bath fa-lg"></i> {{ listing.baths_count }}
+                                            </div>
+                                            <p class="text-center mb-0">${{ listing.price }}</p>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="card-footer row d-flex justify-content-around">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-success">View Listing</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-success">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+                <!-- <div div="row">
+                    <ul class="pagination pagination-lg justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+    <!-- End Content -->
+
+{% endblock content %}

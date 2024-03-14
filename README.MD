@@ -12,3 +12,6 @@ All in all, a pretty simple project.
 For those of you who have experience with Heroku, you know that it has an ephemeral filesystem and inevitably, the images stored on the Live Demo will be deleted. So this is really only for testing the app out. 
 
 For using it properly, you would need to deploy it on a real server. Or you could configure Django to use a different storage system, like Amazon S3 or something.
+
+## About me
+I'm a freelance developer. Wanna see more of my work? See my website here: https://www.hassandev.me
